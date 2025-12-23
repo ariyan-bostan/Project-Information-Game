@@ -43,7 +43,7 @@ const App = () => {
 
       <GridItem area={"sidebar"} >
 
-        <SideBar setGenre={setSelectGenre} setTitle={setTitle} direction="column" />
+        <SideBar genre={genre?.name} setGenre={setSelectGenre} setTitle={setTitle} direction="column" />
       </GridItem>
         
       

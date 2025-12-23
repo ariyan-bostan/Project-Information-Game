@@ -7,10 +7,11 @@ import { base } from 'framer-motion/client'
 interface Props{
     direction:string,
     setTitle:(title:string)=>void,
-    setGenre:(genre:Genre)=>void
+    setGenre:(genre:Genre)=>void,
+    genre?:string
 }
 
-const SideBar = ({direction,setTitle,setGenre}:Props) => {
+const SideBar = ({direction,setTitle,setGenre,genre}:Props) => {
     const {data,error,loading}=useGenre();
   return (
     <>
@@ -26,8 +27,9 @@ const SideBar = ({direction,setTitle,setGenre}:Props) => {
                 <Button onClick={()=>{
                     setTitle(item.name);
                     setGenre(item);
+                    console.log(genre===item.name)
                     
-                }} variant={"link"} whiteSpace={"normal"}  >{item.name}</Button>
+                }} variant={"link"} whiteSpace={"normal"} fontWeight={genre===item.name?"bold":"normal"}  >{item.name}</Button>
             </HStack>
         ))}
     </SimpleGrid>
