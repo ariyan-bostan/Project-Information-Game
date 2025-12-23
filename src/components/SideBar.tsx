@@ -19,7 +19,8 @@ const SideBar = ({direction,setTitle,setGenre,genre}:Props) => {
     <SimpleGrid padding={"5px"} columns={{
         sm:3,
         md:5,
-        lg:1
+        lg:1,
+        base:3
     }} >
         {data.map(item=>(
             <HStack margin={"4px"}>
